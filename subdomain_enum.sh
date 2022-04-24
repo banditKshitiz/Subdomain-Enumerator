@@ -18,8 +18,7 @@ if [[ $name == "" ]]; then
     exit 1;
 fi
 
-
-presert_dir=pwd
+present_dir=$(pwd)
 
 echo "site name : $name"
 
@@ -31,7 +30,7 @@ mkdir subdomains
 
 echo "finddomain Started...."
 
-$presert_dir/tools/finddomain/findomain-linux --output --target $name
+$present_dir/tools/findomain/findomain-linux --output --target $name
 
 cat $name.txt >> subdomains/finddomainResult.txt
 
@@ -51,7 +50,7 @@ assetfinder --subs-only $name >> subdomains/assetfinderResult.txt
 
 echo "Sublist3r Started...."
 
-python3 $presert_dir/tools/Sublist3r/sublist3r.py -d  $name -o subdomains/Sublist3rResult.txt
+python3 $present_dir/tools/Sublist3r/sublist3r.py -d  $name -o subdomains/Sublist3rResult.txt
 
 echo "Curling Started...."
 
