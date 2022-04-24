@@ -20,7 +20,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 	cd ..
 
 	echo "Amass Installing"
-	go install -v github.com/OWASP/Amass/v3/...@master
+	apt-get install amass
 
 	echo "Subfinder Installing"
 	go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
@@ -34,7 +34,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 	pip3 install -r requirements.txt
 	cd ..
 	
-	echo "Anibus Installing"
+	echo "Anubis Installing"
 	sudo apt-get install python3-pip python-dev libssl-dev libffi-dev
 	pip3 install anubis-netsec
 	
